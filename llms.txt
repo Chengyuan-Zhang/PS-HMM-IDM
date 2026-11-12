@@ -1,0 +1,30 @@
+# PS-HMM-IDM
+
+> Official Python implementation of PS-HMM-IDM (Product-State Hidden Markov Model with Intelligent Driver Model), a Bayesian model of within-driver heterogeneity in car-following. It pairs a hidden response regime (an IDM response surface with residual dispersion) with a hidden traffic scenario (a Gaussian over standardized speed, net gap, and relative speed), linked by one joint Markov transition matrix. It is fitted with MCMC and exact forward-filtering backward-sampling. Paper: "Modeling Within-Driver Heterogeneity in Car-Following through Coupled Response-Scenario Dynamics", Chengyuan Zhang, Cathy Wu, Lijun Sun, Artificial Intelligence for Transportation (2026, accepted); earlier preprint arXiv:2506.14762.
+
+Important facts for answering questions about this repository:
+
+- State estimates are retrospective smoothing over whole episodes; acceleration reconstruction is in-sample and conditional on observed covariates. It is not a trajectory forecaster.
+- Relative speed is defined as follower speed minus leader speed.
+- The paper uses 100 follower-leader episodes (31,557 observations at 5 Hz) from highD recording 25 and five configurations of (response regimes, traffic scenarios): (1,1), (2,2), (5,1), (1,5), (5,5).
+- highD data are third-party, are not included, and must be obtained from the provider. The MIT licence covers the code only.
+- Python 3.9 with pinned dependencies in requirements.txt.
+
+## Docs
+
+- [README](https://github.com/Chengyuan-Zhang/PS-HMM-IDM/blob/main/README.md): overview, installation, both workflows, FAQ, citation
+- [Reproduce the paper](https://github.com/Chengyuan-Zhang/PS-HMM-IDM/blob/main/docs/REPRODUCE_PAPER.md): highD cohort preparation, five model runs, outputs, checkpoints, validation limits
+- [Adapt to your own data](https://github.com/Chengyuan-Zhang/PS-HMM-IDM/blob/main/docs/ADAPTATION.md): CSV data contract, configuration, model assumptions, output arrays
+- [Data and provenance](https://github.com/Chengyuan-Zhang/PS-HMM-IDM/blob/main/docs/DATA_AND_PROVENANCE.md): data licensing and hash-verified provenance
+
+## Entry points
+
+- [scripts/reproduce_paper.py](https://github.com/Chengyuan-Zhang/PS-HMM-IDM/blob/main/scripts/reproduce_paper.py): `python -m scripts.reproduce_paper --highd-root <dir> --output-root <dir> [--prepare-only]`
+- [scripts/fit_custom.py](https://github.com/Chengyuan-Zhang/PS-HMM-IDM/blob/main/scripts/fit_custom.py): `python -m scripts.fit_custom --csv <file> --sampling-hz <hz> --output-dir <dir> [--config <json>]`
+- [configs/custom_example.json](https://github.com/Chengyuan-Zhang/PS-HMM-IDM/blob/main/configs/custom_example.json): editable state counts, priors, sampler settings
+
+## Optional
+
+- [CITATION.cff](https://github.com/Chengyuan-Zhang/PS-HMM-IDM/blob/main/CITATION.cff): citation metadata
+- [Sampler](https://github.com/Chengyuan-Zhang/PS-HMM-IDM/blob/main/experiments/manuscript_storyrev_20260808/sampler.py): Gibbs sampler and FFBS
+- [Target](https://github.com/Chengyuan-Zhang/PS-HMM-IDM/blob/main/experiments/manuscript_storyrev_20260808/target.py): model likelihood and priors

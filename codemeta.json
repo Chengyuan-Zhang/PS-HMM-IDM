@@ -1,0 +1,55 @@
+{
+  "@context": "https://w3id.org/codemeta/3.0",
+  "@type": "SoftwareSourceCode",
+  "name": "PS-HMM-IDM",
+  "alternateName": "Product-State Hidden Markov Model with Intelligent Driver Model",
+  "description": "Bayesian product-state hidden Markov model for within-driver heterogeneity in car-following. Response regimes are Intelligent Driver Model (IDM) response surfaces; traffic scenarios are distributions of speed, net gap, and relative speed; a joint Markov process links them. Inference uses MCMC with exact forward-filtering backward-sampling. Includes paper reproduction on the highD dataset and a CSV interface for custom car-following data.",
+  "codeRepository": "https://github.com/Chengyuan-Zhang/PS-HMM-IDM",
+  "url": "https://github.com/Chengyuan-Zhang/PS-HMM-IDM",
+  "license": "https://spdx.org/licenses/MIT",
+  "programmingLanguage": "Python",
+  "runtimePlatform": "Python 3.9",
+  "applicationCategory": "Transportation research; Bayesian statistics",
+  "keywords": [
+    "car-following behavior",
+    "within-driver heterogeneity",
+    "product-state hidden Markov model",
+    "hidden Markov model",
+    "Intelligent Driver Model",
+    "Bayesian inference",
+    "MCMC",
+    "forward-filtering backward-sampling",
+    "regime switching",
+    "highD dataset"
+  ],
+  "author": [
+    {
+      "@type": "Person",
+      "givenName": "Chengyuan",
+      "familyName": "Zhang",
+      "affiliation": {"@type": "Organization", "name": "McGill University"}
+    }
+  ],
+  "referencePublication": [
+    {
+      "@type": "ScholarlyArticle",
+      "name": "Modeling Within-Driver Heterogeneity in Car-Following through Coupled Response-Scenario Dynamics",
+      "author": [
+        {"@type": "Person", "givenName": "Chengyuan", "familyName": "Zhang"},
+        {"@type": "Person", "givenName": "Cathy", "familyName": "Wu"},
+        {"@type": "Person", "givenName": "Lijun", "familyName": "Sun"}
+      ],
+      "isPartOf": {"@type": "Periodical", "name": "Artificial Intelligence for Transportation"},
+      "datePublished": "2026"
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "name": "Markov Regime-Switching Intelligent Driver Model for Interpretable Car-Following Behavior",
+      "identifier": "https://doi.org/10.48550/arXiv.2506.14762",
+      "url": "https://arxiv.org/abs/2506.14762",
+      "datePublished": "2025-06-17"
+    }
+  ],
+  "softwareRequirements": "https://github.com/Chengyuan-Zhang/PS-HMM-IDM/blob/main/requirements.txt",
+  "developmentStatus": "active"
+}

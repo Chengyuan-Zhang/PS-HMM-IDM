@@ -2,21 +2,63 @@ cff-version: 1.2.0
 message: "Please cite the accepted article when using this implementation."
 type: software
 title: "PS-HMM-IDM: Product-State Hidden Markov Model with Intelligent Driver Model"
+abstract: >-
+  Official implementation of PS-HMM-IDM, a Bayesian product-state hidden
+  Markov model for within-driver heterogeneity in car-following. Each
+  response regime is an Intelligent Driver Model (IDM) response surface with
+  residual dispersion, each traffic scenario is a distribution of observed
+  speed, net gap, and relative speed, and a joint Markov process links the
+  paired states. Inference uses MCMC with exact forward-filtering
+  backward-sampling. The repository reproduces the five model configurations
+  of the paper on the highD dataset and provides a CSV interface for fitting
+  other car-following episodes.
 repository-code: "https://github.com/Chengyuan-Zhang/PS-HMM-IDM"
 url: "https://github.com/Chengyuan-Zhang/PS-HMM-IDM"
+license: MIT
+keywords:
+  - car-following behavior
+  - within-driver heterogeneity
+  - product-state hidden Markov model
+  - hidden Markov model
+  - Intelligent Driver Model
+  - Bayesian inference
+  - MCMC
+  - forward-filtering backward-sampling
+  - regime switching
+  - highD dataset
+  - traffic flow
+  - driver behavior
 authors:
   - family-names: Zhang
     given-names: Chengyuan
+    affiliation: "Department of Civil Engineering, McGill University"
 preferred-citation:
   type: article
   title: "Modeling Within-Driver Heterogeneity in Car-Following through Coupled Response-Scenario Dynamics"
   authors:
     - family-names: Zhang
       given-names: Chengyuan
+      affiliation: "Department of Civil Engineering, McGill University"
     - family-names: Wu
       given-names: Cathy
+      affiliation: "Laboratory for Information and Decision Systems, Massachusetts Institute of Technology"
     - family-names: Sun
       given-names: Lijun
+      affiliation: "Department of Civil Engineering, McGill University"
   journal: "Artificial Intelligence for Transportation"
   year: 2026
   notes: "Accepted manuscript; publication identifiers are not yet available."
+references:
+  - type: article
+    title: "Markov Regime-Switching Intelligent Driver Model for Interpretable Car-Following Behavior"
+    authors:
+      - family-names: Zhang
+        given-names: Chengyuan
+      - family-names: Wu
+        given-names: Cathy
+      - family-names: Sun
+        given-names: Lijun
+    year: 2025
+    doi: "10.48550/arXiv.2506.14762"
+    url: "https://arxiv.org/abs/2506.14762"
+    notes: "Earlier preprint version."
