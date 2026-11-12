@@ -9,6 +9,8 @@ The product-state hidden Markov model pairs a response state, which selects an I
 Create an environment with Python 3.9, then run from the repository root. The optional `data.data_loader.KF_tracks` helper additionally needs `pykalman`; the paper and custom-data workflows do not.
 
 ```bash
+git clone https://github.com/Chengyuan-Zhang/PS-HMM-IDM.git
+cd PS-HMM-IDM
 python -m pip install -r requirements.txt
 python -m scripts.verify_release
 python -m pytest -q

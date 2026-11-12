@@ -2,6 +2,8 @@ cff-version: 1.2.0
 message: "Please cite the accepted article when using this implementation."
 type: software
 title: "PS-HMM-IDM: Product-State Hidden Markov Model with Intelligent Driver Model"
+repository-code: "https://github.com/Chengyuan-Zhang/PS-HMM-IDM"
+url: "https://github.com/Chengyuan-Zhang/PS-HMM-IDM"
 authors:
   - family-names: Zhang
     given-names: Chengyuan
