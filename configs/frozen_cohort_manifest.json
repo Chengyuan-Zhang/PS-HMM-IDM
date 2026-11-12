@@ -1,0 +1,180 @@
+{
+  "cohort": {
+    "array_manifest": {
+      "acceleration": {
+        "dtype": "float64",
+        "sha256": "1bd809fa18b112ea6e93aa332e64936fee5faa5dd7609cbfb21943bd66c66ae5",
+        "shape": [
+          31557
+        ]
+      },
+      "follower_classes": {
+        "dtype": "<U5",
+        "sha256": "f0802ca495dc8e9e1e1f0a042d4a7eea0e9a3c46283dfb4c31bc573a03ec033c",
+        "shape": [
+          100
+        ]
+      },
+      "follower_ids": {
+        "dtype": "int64",
+        "sha256": "69983b00c819647c03e4723bba8e164559e924dfd6c1773fd538424993a67f81",
+        "shape": [
+          100
+        ]
+      },
+      "frames": {
+        "dtype": "int64",
+        "sha256": "1ce7228df724f38d2ba779cb65f005f064fad7bb68d5495677863a898e46ba31",
+        "shape": [
+          31557
+        ]
+      },
+      "leader_ids": {
+        "dtype": "int64",
+        "sha256": "2a54901d248f90e207f6586d0239692b9e54827df9973cf4539b4b27ac4fa1e4",
+        "shape": [
+          31557
+        ]
+      },
+      "lengths": {
+        "dtype": "int64",
+        "sha256": "9fe6091a3ef8d1e827aa9e0f0d59b041fac021a04b8ca331c9f6b1c91c579459",
+        "shape": [
+          100
+        ]
+      },
+      "offsets": {
+        "dtype": "int64",
+        "sha256": "cdb9ef45cb6ad8abe4c4b52fa88d02b04da12e303e772e789cb40e74b2ab2b84",
+        "shape": [
+          101
+        ]
+      },
+      "pair_nos": {
+        "dtype": "int64",
+        "sha256": "d82a1c34d76116ec0926c8002421979bc7b8699eb7dc43172ac663ffa380c38c",
+        "shape": [
+          100
+        ]
+      },
+      "physical_context": {
+        "dtype": "float64",
+        "sha256": "f0b53ee8a8cc037d5114cf99fdcc3be24631a5949800151c0f4ff58f683349d1",
+        "shape": [
+          31557,
+          3
+        ]
+      },
+      "recording_ids": {
+        "dtype": "int64",
+        "sha256": "bb8c965d6293dc47d9cae94efb7dc1e91c182eb2a477230707c451bd0f1f0ec4",
+        "shape": [
+          100
+        ]
+      },
+      "trajectory_ids": {
+        "dtype": "<U26",
+        "sha256": "bc31acb6fc729a623c034248f44626c6822fb7452c83a35aa8097acf156c73f3",
+        "shape": [
+          100
+        ]
+      }
+    },
+    "cohort_order_sha256": "8f7428af1d3ddfd5911db9b0e119f64476bb465859a0c796e917ab879432875b",
+    "domain_audit": {
+      "legacy_continuity_decision": {
+        "affected_trajectory_count": 23,
+        "affected_trajectory_ids": [
+          "legacy_pair_0023_r25_f0309",
+          "legacy_pair_0028_r25_f0327",
+          "legacy_pair_0029_r25_f0332",
+          "legacy_pair_0032_r25_f0342",
+          "legacy_pair_0033_r25_f0343",
+          "legacy_pair_0035_r25_f0352",
+          "legacy_pair_0036_r25_f0355",
+          "legacy_pair_0038_r25_f0361",
+          "legacy_pair_0063_r25_f0420",
+          "legacy_pair_0081_r25_f0747",
+          "legacy_pair_0082_r25_f0756",
+          "legacy_pair_0084_r25_f0788",
+          "legacy_pair_0086_r25_f0981",
+          "legacy_pair_0087_r25_f0986",
+          "legacy_pair_0088_r25_f0994",
+          "legacy_pair_0089_r25_f1001",
+          "legacy_pair_0090_r25_f1005",
+          "legacy_pair_0091_r25_f1011",
+          "legacy_pair_0092_r25_f1016",
+          "legacy_pair_0093_r25_f1025",
+          "legacy_pair_0094_r25_f1069",
+          "legacy_pair_0096_r25_f1089",
+          "legacy_pair_0097_r25_f1095"
+        ],
+        "affected_trajectory_indices_zero_based": [
+          23,
+          28,
+          29,
+          32,
+          33,
+          35,
+          36,
+          38,
+          63,
+          81,
+          82,
+          84,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          96,
+          97
+        ],
+        "all_fixed_manuscript_cases_unaffected": true,
+        "allow_observed_negative_speed": true,
+        "decision_label": "scheme-b-frozen-cohort-continuity",
+        "decision_source": "scheme_b_scope_and_implementation_disclosure",
+        "justification": "Scheme B preserves the frozen historical cohort byte-for-byte so that inference corrections are isolated from data cleaning. Small negative speeds near standstill remain raw highD observations; no clipping, deletion, or delta-v recomputation is performed.",
+        "minimum_allowed_speed_mps": -0.2,
+        "minimum_observed_speed_mps": -0.2,
+        "negative_speed_fraction": 0.012833919574104003,
+        "negative_speed_values": 405,
+        "observations_deleted": false,
+        "raw_observations_preserved": true,
+        "relative_speed_recomputed": false,
+        "speed_clipped": false,
+        "target_input_fingerprint_sha256": "c7d4fc9cc43a672d8df81623444fede98f6c46bc461f7f6388f50023058628ba",
+        "target_input_fingerprint_unchanged": true,
+        "unaffected_case_indices_zero_based": [
+          2,
+          3,
+          6,
+          9
+        ]
+      }
+    }
+  },
+  "target_input_fingerprint": {
+    "inputs": {
+      "cohort_order_sha256": "8f7428af1d3ddfd5911db9b0e119f64476bb465859a0c796e917ab879432875b",
+      "context_columns": [
+        "v_follower_m_s",
+        "gap_m",
+        "delta_v_follower_minus_leader_m_s"
+      ],
+      "frame_rate_hz": 5,
+      "historical_canonical_match": true,
+      "manuscript_case_indices_zero_based": [
+        2,
+        3,
+        6,
+        9
+      ]
+    },
+    "sha256": "c7d4fc9cc43a672d8df81623444fede98f6c46bc461f7f6388f50023058628ba"
+  }
+}

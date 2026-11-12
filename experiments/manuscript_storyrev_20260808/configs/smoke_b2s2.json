@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "model_id": "ps_hmm_idm_original_idm_exact_ffbs_v1",
+  "arm_id": "SMOKE_B2_S2_full_joint",
+  "purpose": "NUMERICAL_SMOKE_ONLY_NOT_MANUSCRIPT_EVIDENCE",
+  "data": {
+    "expected_num_trajectories": 100,
+    "sampling_frequency_hz": 5.0,
+    "observed_negative_speed_policy": {
+      "allow_observed_negative_speed": true,
+      "minimum_allowed_speed_mps": -0.2,
+      "expected_negative_speed_count": 405,
+      "expected_negative_speed_fraction": 0.012833919574104003,
+      "expected_affected_trajectory_count": 23,
+      "unaffected_case_indices_zero_based": [2, 3, 6, 9],
+      "raw_observations_preserved": true,
+      "justification": "Scheme B preserves the frozen historical cohort byte-for-byte to isolate inference corrections; no speed is clipped, no observation is deleted, and relative speed is not recomputed."
+    }
+  },
+  "states": {"behavior": 2, "scenario": 2},
+  "context_order": ["speed", "gap", "relative_speed"],
+  "idm": {
+    "variant": "historical_untruncated_desired_gap",
+    "parameter_order": ["desired_speed", "minimum_gap", "time_headway", "maximum_acceleration", "comfortable_deceleration"],
+    "acceleration_exponent": 4.0,
+    "log_prior_mean": [3.4965075614664802, 0.6931471805599453, 0.47000362924573563, 0.4054651081081644, 0.5128236264286637],
+    "log_prior_standard_deviation": [0.1, 0.1, 0.1, 0.1, 0.1],
+    "lower": [5.0, 0.001, 0.001, 0.0001, 0.0001],
+    "upper": [200.0, 50.0, 50.0, 50.0, 50.0],
+    "slice_width": [0.1, 0.1, 0.1, 0.1, 0.1],
+    "slice_max_steps_out": 100,
+    "slice_max_shrink": 2000
+  },
+  "residual_variance_prior": {"family": "inverse_gamma_shape_scale", "shape": 100.0, "scale": 1.0},
+  "scenario_niw_prior": {"mean": [0.0, 0.0, 0.0], "mean_strength": 0.01, "degrees_of_freedom": 5.0, "scale_diagonal": [0.01, 0.01, 0.01]},
+  "transition_prior": {"family": "rowwise_symmetric_dirichlet", "legacy_alpha": 1000.0, "per_cell_concentration": 500.0, "row_total_concentration": 2000.0},
+  "initial_distribution_prior": {"family": "symmetric_dirichlet", "total_concentration": 1.0},
+  "chain": {"master_seed": 20260807, "seed_spawn_index": 100, "num_iterations": 2, "burn_in": 1, "thin": 1, "store_latent_paths": true}
+}

@@ -1,0 +1,76 @@
+{
+  "article": "Modeling Within-Driver Heterogeneity in Car-Following through Coupled Response–Scenario Dynamics",
+  "historical_git_commit": "e72e031c4ed5c46c11b7267043e9ce4898a94d7c",
+  "historical_worktree_dirty": true,
+  "source_identity_note": "The recorded source hashes, not the dirty-worktree Git commit alone, identify the numerical source.",
+  "scientific_source_sha256": {
+    "experiments/manuscript_storyrev_20260808/__init__.py": "c1a671435a5f74c7cba4fcfa6768c8bf5bac2824279ae0fc49b2ef9637d9ea06",
+    "experiments/manuscript_storyrev_20260808/checkpoint.py": "3d91191916292f9e54866d5b49b868351887da8662005da28edcc23eb5ca919a",
+    "experiments/manuscript_storyrev_20260808/run_exact_reconstruction.py": "47c68b3148b8bbd3bb4c2ebba97d862ee11b932f6f92293d245ed4058d971702",
+    "experiments/manuscript_storyrev_20260808/sampler.py": "9087fe5660f0e7d379f56f85b6e3151a3d0127f26406f68d190b3b9f7cedae88",
+    "experiments/manuscript_storyrev_20260808/target.py": "6fc60bce8ec14f09b76af0f73b5c1888a08a4aa1ec7a7f09a05c0be4c5e255eb",
+    "experiments/revision_20260806/inference/__init__.py": "0b1d0938bf7c214b39de8c9cf486b5e4503d9b160fa00274af7d5557fcb7825e",
+    "experiments/revision_20260806/inference/emissions.py": "a8c79aeec7a9ac02c682f50c8dd09117a1f086dd7077bbef4fe3c6751aedc900",
+    "experiments/revision_20260806/inference/idm_block.py": "e3dff1f998006166f2d8984f5a19db80e00ea34307a1e9f2c1efd13d6fd31626",
+    "experiments/revision_20260806/inference/idm_composite.py": "8a1a26aef447bc96e50be00b2aa68da9f7c32057e2568dec1c7036f07e8e8c49",
+    "experiments/revision_20260806/inference/idm_composite_slice.py": "8bb5828a24a3914250f3896a5d0a26c9314889e7f60b3d3a04e156444781c278",
+    "experiments/revision_20260806/inference/idm_elliptical_slice.py": "cfbdeba1944a5fb9849f0ed6ca07f5ce7ea925d8914e62ea847009854bd0c3fc",
+    "experiments/revision_20260806/inference/idm_mala.py": "cdcad4d3f13ca854dfb9636ade019ca0a3027e4c050943e5d9a9b8dd110b21fb",
+    "experiments/revision_20260806/inference/idm_owned_slice.py": "ff8cb788ee457a330c43e9db46f93819e755e409d0cca6337322c118eb19aa16",
+    "experiments/revision_20260806/inference/idm_ownership.py": "77b986200c5b162a8e354315afcc83ce4cf4dbb9ccbb2cc1f8dc46e4916801c2",
+    "experiments/revision_20260806/inference/initialization.py": "98c71c645c1ca12e4f26239355aebf3f75b8cbc52569872c4eb1dbd09e69a65c",
+    "experiments/revision_20260806/inference/sampler.py": "012076bcdf80ad8b29ff47c9ef4c1ef8d31098b55182982eb97e7515fc8e2d1a",
+    "experiments/revision_20260806/inference/structures.py": "3532059cb4524f98d3548d21cb0ea503618a40d76d6b139561fe8ce4398f0196",
+    "experiments/revision_20260806/inference/updates.py": "26d052ac6d13cd1889fdc701679a513c73e3ba80c13d1002c537c397a4cb3bcd",
+    "experiments/revision_20260806/model/__init__.py": "374f936c810f65f3764b68a74b86e0ce559fa3fb21412e21549e880ac6f88936",
+    "experiments/revision_20260806/model/constants.py": "2fa4ed276c88e6adcf6f34a8227fca9bc1faf6473fcb75edb9db1f579c20c906",
+    "experiments/revision_20260806/model/idm.py": "3b4014a4208953155c8dabe4f6a8871408bca429d2bedd64e79743f89e413d4e",
+    "experiments/revision_20260806/model/inference.py": "8faea3e800bab48a1606f4a3cb553c20bb9b2584e9c6fde596e7edaf83c4023b",
+    "experiments/revision_20260806/model/state_space.py": "7636c2d99f9ce18d2c8b4abf849511607e77b29f6482efab186bf3778829c960",
+    "experiments/revision_20260806/model/transitions.py": "96753a7b5cfca18c0fd5efdb0fdb1a1e441076b1ae5bfe9cd0be7a51f2682b52"
+  },
+  "cohort_npz_sha256": "1627b74e230b5cf7d5f1d443a7c40b9895cfd72a51bb9df394cc47b783e51f75",
+  "cohort_content_sha256": "c7d4fc9cc43a672d8df81623444fede98f6c46bc461f7f6388f50023058628ba",
+  "arms": {
+    "b1s1": {
+      "arm_id": "B1_S1_full_joint",
+      "target_fingerprint": "9894802157425ff11fc8eba4215174358927814d59425da658882b4db292f7ac",
+      "seed_spawn_key": [
+        0
+      ],
+      "original_runtime_seconds": 20032.9196083
+    },
+    "b2s2": {
+      "arm_id": "B2_S2_full_joint",
+      "target_fingerprint": "b7e58650a52325657653e30a1f47074a396bf205a881404748ab0ded65654625",
+      "seed_spawn_key": [
+        1
+      ],
+      "original_runtime_seconds": 21631.3684783
+    },
+    "b5s1": {
+      "arm_id": "B5_S1_full_joint",
+      "target_fingerprint": "241fb53546cd25b2d886d6d660f3e08fc0073ac3254a38c67d3162ae752c97f9",
+      "seed_spawn_key": [
+        2
+      ],
+      "original_runtime_seconds": 21835.8527805
+    },
+    "b1s5": {
+      "arm_id": "B1_S5_full_joint",
+      "target_fingerprint": "70b3e07cf3d38ec2425634aba4889439ea2861eeb714d68625d619375bb0447a",
+      "seed_spawn_key": [
+        3
+      ],
+      "original_runtime_seconds": 21630.8059977
+    },
+    "b5s5": {
+      "arm_id": "B5_S5_full_joint",
+      "target_fingerprint": "b3eaf1e308c98b43683836c0fde4ab73fa776d3deaed345daba7a503f0bab6c7",
+      "seed_spawn_key": [
+        4
+      ],
+      "original_runtime_seconds": 22922.786319900002
+    }
+  }
+}

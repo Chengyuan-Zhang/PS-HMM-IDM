@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "required_arm_ids": [
+    "B1_S1_full_joint",
+    "B2_S2_full_joint",
+    "B5_S1_full_joint",
+    "B1_S5_full_joint",
+    "B5_S5_full_joint"
+  ],
+  "manuscript_arm_id": "B5_S5_full_joint",
+  "pooled_arm_id": "B1_S1_full_joint",
+  "fixed_case_indices_zero_based": [2, 3, 6, 9],
+  "credible_interval_probabilities": [0.025, 0.975],
+  "rare_occupancy_threshold": 0.01,
+  "empty_draw_fraction_threshold": 0.5,
+  "case_supported_occupancy_threshold": 0.05,
+  "minimum_passing_fixed_cases": 3,
+  "alignment": {
+    "reference_draw": "maximum_log_likelihood",
+    "response_anchors_physical_order_v_s_dv": [
+      [5.0, 5.0, 0.0],
+      [5.0, 15.0, -1.0],
+      [10.0, 8.0, 1.0],
+      [10.0, 20.0, 0.0],
+      [15.0, 12.0, 2.0],
+      [15.0, 30.0, -2.0],
+      [20.0, 20.0, 0.0],
+      [25.0, 40.0, -2.0]
+    ],
+    "feature_scale_floor": 1e-08
+  },
+  "figure": {
+    "time_space_max_trajectories": 85,
+    "time_space_lane_ids": [3, 4],
+    "sampling_frequency_hz": 5.0
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "model_id": "ps_hmm_idm_original_idm_exact_ffbs_v1",
+  "arm_id": "CUSTOM_B2_S2",
+  "purpose": "EXAMPLE_ONLY_REPLACE_PRIORS_AND_SAMPLING_FOR_YOUR_DATA",
+  "data": {"expected_num_trajectories": 1, "sampling_frequency_hz": 5.0},
+  "states": {"behavior": 2, "scenario": 2},
+  "context_order": ["speed", "gap", "relative_speed"],
+  "idm": {
+    "variant": "historical_untruncated_desired_gap",
+    "parameter_order": ["desired_speed", "minimum_gap", "time_headway", "maximum_acceleration", "comfortable_deceleration"],
+    "acceleration_exponent": 4.0,
+    "log_prior_mean": [3.4965075614664802, 0.6931471805599453, 0.47000362924573563, 0.4054651081081644, 0.5128236264286637],
+    "log_prior_standard_deviation": [0.1, 0.1, 0.1, 0.1, 0.1],
+    "lower": [5.0, 0.001, 0.001, 0.0001, 0.0001],
+    "upper": [200.0, 50.0, 50.0, 50.0, 50.0],
+    "slice_width": [0.1, 0.1, 0.1, 0.1, 0.1],
+    "slice_max_steps_out": 100,
+    "slice_max_shrink": 2000
+  },
+  "residual_variance_prior": {"family": "inverse_gamma_shape_scale", "shape": 100.0, "scale": 1.0},
+  "scenario_niw_prior": {"mean": [0.0, 0.0, 0.0], "mean_strength": 0.01, "degrees_of_freedom": 5.0, "scale_diagonal": [0.01, 0.01, 0.01]},
+  "transition_prior": {"family": "rowwise_symmetric_dirichlet", "row_total_concentration": 20.0},
+  "initial_distribution_prior": {"family": "symmetric_dirichlet", "total_concentration": 1.0},
+  "chain": {"master_seed": 2026, "seed_spawn_index": 0, "num_iterations": 20, "burn_in": 10, "thin": 1, "store_latent_paths": true}
+}

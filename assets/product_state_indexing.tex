@@ -1,0 +1,113 @@
+% Conservative polish of Figs/storyrev/indexing.tex.
+% The original TikZ composition and the corrected (B,S) indexing are retained.
+\usetikzlibrary{decorations.pathreplacing}
+\tikzset{>=latex}
+
+\definecolor{EThreeBlue}{HTML}{3B6FB6}
+\definecolor{EThreeAmber}{HTML}{C58C52}
+\definecolor{EThreeTeal}{HTML}{4F9A8A}
+\definecolor{EThreeViolet}{HTML}{8B6FA8}
+\definecolor{EThreeRose}{HTML}{B95C59}
+\definecolor{EThreeNeutral}{HTML}{4A5056}
+
+\begin{tikzpicture}[line cap=round,line join=round]
+
+\newcommand{\Kb}{5}
+\newcommand{\Ks}{5}
+\newcommand{\origin}{0}
+
+% Product-state grid: columns are response coordinates and rows are contexts.
+\shade[left color=EThreeBlue!80!white,right color=EThreeBlue!12!white]
+    (\origin,2.0) rectangle (\origin+2.5,2.5);
+\shade[left color=EThreeAmber!78!white,right color=EThreeAmber!12!white]
+    (\origin,1.5) rectangle (\origin+2.5,2.0);
+\shade[left color=EThreeTeal!78!white,right color=EThreeTeal!12!white]
+    (\origin,1.0) rectangle (\origin+2.5,1.5);
+\shade[left color=EThreeViolet!72!white,right color=EThreeViolet!10!white]
+    (\origin,0.5) rectangle (\origin+2.5,1.0);
+\shade[left color=EThreeRose!72!white,right color=EThreeRose!10!white]
+    (\origin,0.0) rectangle (\origin+2.5,0.5);
+\draw[step=0.5,line width=0.55pt,color=white]
+    (\origin,0) grid (\origin+2.5,2.5);
+\draw[line width=0.7pt,color=EThreeNeutral]
+    (\origin,0) rectangle (\origin+2.5,2.5);
+
+\node[above,text=EThreeBlue!80!black] at (1.25,2.65)
+    {response coordinate $k^{[\mathrm B]}$};
+\node[rotate=90,left,text=EThreeTeal!80!black] at (-0.55,1.25)
+    {context coordinate $k^{[\mathrm S]}$};
+
+\foreach \b in {0,...,4}{
+    \pgfmathsetmacro\x{\b*0.5}
+    \pgfmathtruncatemacro\bb{\b+1}
+    \node[below,text=EThreeNeutral] at (\x+0.25,2.85)
+        {\scriptsize $\bb$};
+}
+\foreach \s in {0,...,4}{
+    \pgfmathsetmacro\y{2.5-\s*0.5}
+    \pgfmathtruncatemacro\ss{\s+1}
+    \node[left,text=EThreeNeutral] at (0,\y-0.25)
+        {\scriptsize $\ss$};
+}
+
+% Map the first three and last two product states to the vectorized ordering.
+\foreach \index in {0,1,2,23,24}{
+    \pgfmathtruncatemacro\bcoord{floor(\index/\Ks)}
+    \pgfmathtruncatemacro\scoord{mod(\index,\Ks)}
+    \pgfmathsetmacro\gx{\bcoord*0.5+0.25}
+    \pgfmathsetmacro\gy{2.5-\scoord*0.5-0.25}
+    \ifnum\index<3
+        \pgfmathsetmacro\vy{2.5-\index*0.5}
+        \draw[->,line width=0.55pt,color=EThreeNeutral]
+            (\gx,\gy) to[out=-90,in=180] (3.5,\vy-0.25);
+    \else
+        \pgfmathsetmacro\vy{1.5-(\index-20)*0.5}
+        \draw[->,line width=0.55pt,color=EThreeNeutral]
+            (\gx,\gy) to[out=-90,in=180] (3.5,\vy-0.25);
+    \fi
+}
+
+\filldraw[fill=EThreeBlue!58!white,draw=EThreeNeutral,line width=0.55pt]
+    (3.5,2.5) rectangle (4.5,2.0);
+\filldraw[fill=EThreeBlue!40!white,draw=EThreeNeutral,line width=0.55pt]
+    (3.5,2.0) rectangle (4.5,1.5);
+\filldraw[fill=EThreeBlue!24!white,draw=EThreeNeutral,line width=0.55pt]
+    (3.5,1.5) rectangle (4.5,1.0);
+\filldraw[fill=EThreeRose!20!white,draw=EThreeNeutral,line width=0.55pt]
+    (3.5,0.0) rectangle (4.5,-0.5);
+\filldraw[fill=EThreeRose!10!white,draw=EThreeNeutral,line width=0.55pt]
+    (3.5,-0.5) rectangle (4.5,-1.0);
+
+% Correct (B,S) order: context varies fastest under
+% q=1+(b-1)K_S+(s-1).
+\foreach \index in {0,1,2}{
+    \pgfmathsetmacro\vy{-\index*0.5+2.5}
+    \pgfmathtruncatemacro\bcoord{1+floor(\index/\Ks)}
+    \pgfmathtruncatemacro\scoord{1+mod(\index,\Ks)}
+    \node[text=EThreeNeutral] at (4,\vy-0.25)
+        {\scriptsize $(\bcoord,\scoord)$};
+}
+
+\node[text=EThreeNeutral] at (4,0.55) {$\vdots$};
+
+\foreach \index in {23,24}{
+    \pgfmathsetmacro\vy{-(\index-20)*0.5+1.5}
+    \pgfmathtruncatemacro\bcoord{1+floor(\index/\Ks)}
+    \pgfmathtruncatemacro\scoord{1+mod(\index,\Ks)}
+    \node[text=EThreeNeutral] at (4,\vy-0.25)
+        {\scriptsize $(\bcoord,\scoord)$};
+}
+
+\node[align=center,anchor=mid,text=EThreeNeutral] at (2.5,-1.72)
+    {\scriptsize $q=1+(b-1)K^{[\mathrm S]}+(s-1)$};
+\node[text width=2.4cm,align=center,anchor=mid,text=EThreeNeutral]
+    at (1.25,-0.95)
+    {\scriptsize paired joint states\\
+     $\boldsymbol k=(k^{[\mathrm B]},k^{[\mathrm S]})$};
+\node[rotate=90,align=center,anchor=mid,text=EThreeNeutral] at (5,0.75)
+    {\scriptsize $Q=25$ joint states};
+\draw[decorate,decoration={brace,amplitude=4pt},line width=0.65pt,
+      color=EThreeNeutral]
+    (4.6,2.5) -- (4.6,-1.0);
+
+\end{tikzpicture}

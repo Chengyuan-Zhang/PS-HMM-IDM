@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "Please cite the accepted article when using this implementation."
+type: software
+title: "PS-HMM-IDM: Product-State Hidden Markov Model with Intelligent Driver Model"
+authors:
+  - family-names: Zhang
+    given-names: Chengyuan
+preferred-citation:
+  type: article
+  title: "Modeling Within-Driver Heterogeneity in Car-Following through Coupled Response-Scenario Dynamics"
+  authors:
+    - family-names: Zhang
+      given-names: Chengyuan
+    - family-names: Wu
+      given-names: Cathy
+    - family-names: Sun
+      given-names: Lijun
+  journal: "Artificial Intelligence for Transportation"
+  year: 2026
+  notes: "Accepted manuscript; publication identifiers are not yet available."
